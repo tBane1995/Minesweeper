@@ -37,8 +37,9 @@ explosion: sdl2.ext.Texture
 
 def load_texture(path: str) -> sdl2.ext.Texture:
     surface = sdl2.sdlimage.IMG_Load(path)
-    return sdl2.SDL_CreateTextureFromSurface(Window.renderer.sdlrenderer, surface)
+    texture = sdl2.SDL_CreateTextureFromSurface(Window.renderer.sdlrenderer, surface)
     sdl2.SDL_FreeSurface(surface)
+    return texture
 
 def load(id: int):
     global current_theme
